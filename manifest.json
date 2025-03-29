@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "JSON Beautifier",
+  "version": "1.0",
+  "description": "A Chrome extension to format selected text as JSON",
+  "permissions": ["contextMenus", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    }
+  },
+  "commands": {
+    "format-json": {
+      "suggested_key": {
+        "default": "Alt+Shift+J"
+      },
+      "description": "格式化选中的JSON文本"
+    }
+  }
+}
