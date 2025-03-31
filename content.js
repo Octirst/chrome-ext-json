@@ -96,9 +96,10 @@ function formatSelectedText() {
     console.log('处理的文本:', selectedText);
 
     // 尝试解析选中的文本为JSON
-    // 先处理可能的转义字符
-    const unescapedText = selectedText.replace(/\\(["\\])/g, '$1');
-    console.log('处理转义后的文本:', unescapedText);
+  // 跳过转义的处理
+  // const unescapedText = selectedText.replace(/\\(["\\])/g, '$1');
+  const unescapedText = selectedText;
+  console.log('处理转义后的文本:', unescapedText);
 
     try {
         console.log('尝试解析JSON...');
